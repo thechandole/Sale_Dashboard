@@ -1,12 +1,14 @@
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement>;
+import React from "react";
 
-export default function Button({ children, ...props }: Props) {
+type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
+
+const Input = (props: InputProps) => {
   return (
-    <button
-      className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700"
+    <input
       {...props}
-    >
-      {children}
-    </button>
+      className={`border px-3 py-2 rounded ${props.className ?? ""}`}
+    />
   );
-}
+};
+
+export default Input;
